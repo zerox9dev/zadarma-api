@@ -1,0 +1,12 @@
+src/
+nodes/
+credentials/
+tsconfig.json
+gulpfile.js
+*.log
+.DS_Store
+.git/
+.vscode/
+.idea/
+*.ts
+!dist/**/*.d.ts
