@@ -1,8 +1,6 @@
 # n8n-nodes-zadarma
 
-**Zadarma API integration for n8n workflows**
-
-[![npm version](https://badge.fury.io/js/n8n-nodes-zadarma.svg)](https://www.npmjs.com/package/n8n-nodes-zadarma)
+Zadarma telephony API integration for n8n workflows.
 
 ## Installation
 
@@ -10,51 +8,51 @@
 npm install n8n-nodes-zadarma
 ```
 
-Restart n8n and the **Zadarma** node will appear in your palette.
+Restart n8n, find **Zadarma** in node palette.
 
 ## Setup
 
-1. **Credentials** → **Create New** → **Zadarma API**
-2. Enter API Key and Secret
-3. Add Zadarma node to workflow
-4. Select credentials and operation
+```bash
+# In n8n:
+# 1. Credentials → Create New → Zadarma API
+# 2. Enter API Key + Secret from https://my.zadarma.com/api/
+# 3. Add Zadarma node to workflow
+```
 
 ## Operations
 
-### Call Statistics
-- Get call records for date range
-- Returns: Call data with recording status
+- **Call Statistics** - Get call records for date range
+- **Recording Download** - Get download link for call ID
 
-### Recording Download  
-- Get download link for call ID
-- Returns: Download URL
+## Usage
 
-## Example
-
+### Get Call Statistics
 ```json
 {
-  "name": "Get Calls",
-  "type": "n8n-nodes-zadarma.zadarma",
-  "parameters": {
-    "resource": "statistics",
-    "operation": "getStats",
-    "startDate": "2024-01-01T00:00:00Z",
-    "endDate": "2024-01-02T00:00:00Z"
-  }
+  "resource": "statistics",
+  "operation": "getStats", 
+  "startDate": "2024-01-01T00:00:00Z",
+  "endDate": "2024-01-02T00:00:00Z"
 }
 ```
 
-## Authentication
+### Get Recording Link
+```json
+{
+  "resource": "recording",
+  "operation": "getLink",
+  "callId": "pbx12345678"
+}
+```
 
-- HMAC-SHA1 signature generation
+## Features
+
+- HMAC-SHA1 authentication
 - RFC1738 URL encoding
-- Automatic header injection
+- Sandbox/production modes
+- Error handling with continue-on-fail
 
 ## Links
 
-- **GitHub**: https://github.com/zerox9dev/zadarma-api
-- **Zadarma API**: https://zadarma.com/en/support/api/
-
-## Author
-
-**zerox9dev** - Mirvald.vadim@icloud.com
+- [Zadarma API Docs](https://zadarma.com/en/support/api/)
+- [GitHub](https://github.com/zerox9dev/zadarma-api)
