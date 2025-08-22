@@ -62,3 +62,7 @@ Restart n8n, find **Zadarma** in node palette.
 
 - [Zadarma API Docs](https://zadarma.com/en/support/api/)
 - [GitHub](https://github.com/zerox9dev/zadarma-api)
+
+## License
+
+MIT License - see [LICENSE](LICENSE) file.

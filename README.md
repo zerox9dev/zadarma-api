@@ -65,3 +65,7 @@ response = api.call('/v1/statistics/pbx/', {
 - `DAYS_BACK` - Дней назад для поиска (по умолчанию: 1)
 - `DOWNLOAD_FOLDER` - Папка для сохранения (по умолчанию: downloads)
 - `FILENAME_TEMPLATE` - Шаблон имен файлов
+
+## Лицензия
+
+MIT License - см. [LICENSE](LICENSE) файл.
