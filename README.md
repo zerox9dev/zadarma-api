@@ -363,73 +363,38 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 # Zadarma API Integration
 
-**Two solutions for automated Zadarma call recording downloads:**
+**Download call recordings from Zadarma API**
 
-- **🐍 Python Script** - Standalone automation
-- **🔗 n8n Custom Node** - Workflow integration
+## Two Solutions
 
-## Quick Start
+- **Python Script** - `python3 run.py`
+- **n8n Node** - `npm install n8n-nodes-zadarma`
 
-### Python Implementation
-``bash
+## Setup
+
+```bash
+# Clone and setup
 git clone https://github.com/zerox9dev/zadarma-api.git
 cd zadarma-api
 pip install -r requirements.txt
-cp .env.example .env  # Add your API credentials
+
+# Add credentials to .env
+API_KEY=your_key
+API_SECRET=your_secret
+
+# Run
 python3 run.py
 ```
 
-### n8n Custom Node
-```bash
-npm install n8n-nodes-zadarma
-# Restart n8n, add Zadarma credentials, use the node
-```
+## n8n Usage
 
-## Features
-
-- ✅ HMAC-SHA1 authentication (RFC1738 compliant)
-- ✅ Call statistics retrieval
-- ✅ Recording download links
-- ✅ Production tested
-
-## Configuration
-
-Edit `.env` file:
-```env
-API_KEY=your_zadarma_api_key
-API_SECRET=your_zadarma_api_secret
-SANDBOX=false
-DAYS_BACK=1
-```
-
-## Python Usage
-
-```python
-from src.zadarma.api import ZadarmaAPI
-
-client = ZadarmaAPI(key="api_key", secret="api_secret")
-stats = client.call('/v1/statistics/pbx/', {
-    'start': '2024-01-01 00:00:00',
-    'end': '2024-01-02 00:00:00'
-})
-```
-
-## n8n Node Operations
-
-- **Call Statistics**: Get call records for date range
-- **Recording Download**: Get download link for call ID
-
-## Repository Structure
-
-```
-├── app/                    # Python implementation
-├── n8n-nodes-zadarma/     # NPM package
-├── run.py                 # Python entry point
-└── requirements.txt       # Python dependencies
-```
+1. Install: `npm install n8n-nodes-zadarma`
+2. Restart n8n
+3. Add credentials
+4. Use Zadarma node
 
 ## Links
 
-- **NPM**: `n8n-nodes-zadarma@1.0.1`
-- **GitHub**: https://github.com/zerox9dev/zadarma-api
-- **Zadarma API Docs**: https://zadarma.com/en/support/api/
+- NPM: `n8n-nodes-zadarma`
+- GitHub: https://github.com/zerox9dev/zadarma-api
+- Zadarma API Docs: https://zadarma.com/en/support/api/
