@@ -1,6 +1,6 @@
 {
-  "name": "n8n-nodes-zadarma",
-  "version": "1.0.3",
+  "name": "@zerox9dev/n8n-nodes-zadarma",
+  "version": "1.0.4",
   "description": "Zadarma API integration node for n8n - reliable authentication based on working Python implementation",
   "keywords": [
     "n8n-community-node-package",
@@ -20,6 +20,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/zerox9dev/zadarma-api"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "main": "index.js",
   "scripts": {

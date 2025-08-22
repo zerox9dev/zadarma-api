@@ -4,8 +4,14 @@ Zadarma telephony API integration for n8n workflows.
 
 ## Installation
 
+### From npm registry
 ```bash
 npm install n8n-nodes-zadarma
+```
+
+### From GitHub Packages
+```bash
+npm install @zerox9dev/n8n-nodes-zadarma
 ```
 
 Restart n8n, find **Zadarma** in node palette.
